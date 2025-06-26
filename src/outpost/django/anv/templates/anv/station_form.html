@@ -1,0 +1,17 @@
+{% extends "outpost/body.html" %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <a class="navbar-brand" href="#">
+    <img src="{% static 'logo.svg' %}" class="logo mx-3">
+    {% trans "ANV Station Configuration" %}
+  </a>
+</nav>
+<div class="container">
+  {% crispy form helper %}
+</div>
+{% endblock %}

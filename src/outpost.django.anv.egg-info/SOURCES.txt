@@ -1,0 +1,16 @@
+LICENSE
+README.rst
+setup.cfg
+setup.py
+src/outpost.django.anv.egg-info/PKG-INFO
+src/outpost.django.anv.egg-info/SOURCES.txt
+src/outpost.django.anv.egg-info/dependency_links.txt
+src/outpost.django.anv.egg-info/namespace_packages.txt
+src/outpost.django.anv.egg-info/not-zip-safe
+src/outpost.django.anv.egg-info/requires.txt
+src/outpost.django.anv.egg-info/top_level.txt
+src/outpost/django/anv/__init__.py
+src/outpost/django/anv/admin.py
+src/outpost/django/anv/models.py
+src/outpost/django/anv/urls.py
+src/outpost/django/anv/views.py
