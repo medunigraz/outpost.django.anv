@@ -4,16 +4,10 @@ from crispy_forms.bootstrap import FormActions
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import (
     Field,
-    Fieldset,
     Layout,
 )
-from django.http import (
-    Http404,
-    HttpResponseRedirect,
-)
-from django.shortcuts import get_object_or_404
-from django.urls import reverse_lazy as reverse
-from django.utils import timezone
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.generic import UpdateView
 from outpost.django.base.layout import IconButton
@@ -66,4 +60,7 @@ class StationView(UpdateView):
             ),
         )
         kwargs["helper"] = helper
+        kwargs["admin"] = self.request.build_absolute_uri(
+            reverse("admin:anv_station_change", kwargs={"object_id": self.object.pk})
+        )
         return super().get_context_data(**kwargs)

@@ -2,6 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% load crispy_forms_tags %}
+{% load qr_code %}
 
 
 {% block body %}
@@ -12,6 +13,21 @@
   </a>
 </nav>
 <div class="container">
-  {% crispy form helper %}
+  <div class="row">
+    <div class="col-4 card text-center p-0">
+      <div class="card-header">
+        {% trans "Stations-ID" %}
+      </div>
+      <div class="card-body p-0">
+        {% qr_from_text admin size="M" %}
+      </div>
+      <div class="card-footer">
+        <code>{{ object.pk }}</code>
+      </div>
+    </div>
+    <div class="col-8">
+      {% crispy form helper %}
+    </div>
+  </div>
 </div>
 {% endblock %}
